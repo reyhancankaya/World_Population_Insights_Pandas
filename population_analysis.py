@@ -66,3 +66,22 @@ plt.xlabel("Countries")
 plt.ylabel("Density (Population/Area)")
 plt.grid(axis='y', linestyle='--', alpha=0.7)
 plt.show()
+
+# --- STEP 4: Advanced Visualization with Seaborn ---
+sns.set_theme(style="whitegrid")
+plt.figure(figsize=(12, 6))
+
+# Subplot 1: Population by Country (Categorized by Continent)
+plt.subplot(1, 2, 1)
+sns.barplot(data=df, x="country", y="population", hue="continent")
+plt.title("**Population by Continent (2025)**")
+plt.xticks(rotation=45)
+
+# Subplot 2: Population Density Comparison
+plt.subplot(1, 2, 2)
+sns.barplot(data=df, x="country", y="density", palette="viridis")
+plt.title("**Population Density Analysis**")
+plt.xticks(rotation=45)
+
+plt.tight_layout()
+plt.show()
